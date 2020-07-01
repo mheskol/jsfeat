@@ -90,7 +90,7 @@
                         $('#no_rtc').show();
                     });
                 }
-                navigator.mediaDevices.enumerateDevices(deviceInfos).then(function(){
+                navigator.mediaDevices.enumerateDevices().then(function(deviceInfos){
                     let devIds = [];  
                     for (let i = 0; i !== deviceInfos.length; ++i) {
                           const deviceInfo = deviceInfos[i];
