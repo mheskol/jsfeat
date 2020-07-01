@@ -98,7 +98,8 @@
                               devIds.push(deviceInfo.deviceId);
                           }
                     }
-                    startVideo(devIds[devIds.length-1]);
+                    startVideo(devIds[0]);
+                    $('#no_rtc').html('<h4>Count of video sources ' + devIds.length + '</h4>');
                 });
                 
             } catch (error) {
