@@ -70,7 +70,7 @@
                 video.addEventListener('loadeddata', readyListener);
 
                 function startVideo(deviceId) {
-                    navigator.mediaDevices.getUserMedia({ video: { exact: deviceId } }).then(function(stream) {
+                    navigator.mediaDevices.getUserMedia({ video: { facingMode: { exact: "environment" } } }).then(function(stream) {
                         if(video.srcObject !== undefined){
                             video.srcObject = stream
                         } else {
