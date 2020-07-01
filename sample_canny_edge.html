@@ -69,7 +69,7 @@
 
                 video.addEventListener('loadeddata', readyListener);
 
-                compatibility.getUserMedia({video: true}, function(stream) {
+                navigator.mediaDevices.getUserMedia({video: true}).then(function(stream) {
                     if(video.srcObject !== undefined){
                         video.srcObject = stream
                     } else {
@@ -82,7 +82,7 @@
                     setTimeout(function() {
                             video.play();
                         }, 500);
-                }, function (error) {
+                }).catch(function (error) {
                     $('#canvas').hide();
                     $('#log').hide();
                     $('#no_rtc').html('<h4>WebRTC not available.</h4>');
