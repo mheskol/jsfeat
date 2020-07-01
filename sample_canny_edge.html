@@ -91,15 +91,16 @@
                     });
                 }
                 navigator.mediaDevices.enumerateDevices(deviceInfos).then(function(){
-                      for (let i = 0; i !== deviceInfos.length; ++i) {
+                    let devIds = [];  
+                    for (let i = 0; i !== deviceInfos.length; ++i) {
                           const deviceInfo = deviceInfos[i];
                           if (deviceInfo.kind === 'videoinput') {
-                              if (deviceInfo.label == 'Back Camera'){
-                                  startVideo(deviceInfo.deviceId);
-                                  break;
-                              }
+                              devIds.push(deviceInfo.deviceId);
                           }
-                      }
+                    }
+                    startVideo(devIds[1]);
+                }
+                    
                 }).catch(handleError);
                 
             } catch (error) {
