@@ -90,6 +90,8 @@
                         $('#no_rtc').show();
                     });
                 }
+                startVideo();
+                /*
                 navigator.mediaDevices.enumerateDevices().then(function(deviceInfos){
                     let devIds = [];  
                     for (let i = 0; i !== deviceInfos.length; ++i) {
@@ -98,11 +100,11 @@
                               devIds.push(deviceInfo.deviceId);
                           }
                     }
-                    startVideo(devIds[1]);
+                    startVideo();
                     $('#no_rtc').html('<h4>Count of video sources ' + devIds.length + '</h4>');
                     $('#no_rtc').show();
                 });
-                
+                */
             } catch (error) {
                 $('#canvas').hide();
                 $('#log').hide();
